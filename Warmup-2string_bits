@@ -1,0 +1,35 @@
+https://codingbat.com/prob/p113152
+
+
+Given a string, return a new string made of every other char starting with the first, so "Hello" yields "Hlo".
+
+
+string_bits('Hello') → 'Hlo'
+string_bits('Hi') → 'H'
+string_bits('Heeololeo') → 'Hello'
+
+
+
+def string_bits(str):
+  count = 0
+  result = ""
+  for ch in str:
+    if count % 2 == 0: 
+      result = result + ch
+    count = count + 1
+  return result
+
+
+
+==============================
+
+official answer: 
+
+def string_bits(str):
+  result = ""
+  # Many ways to do this. This uses the standard loop of i on every char,
+  # and inside the loop skips the odd index values.
+  for i in range(len(str)):
+    if i % 2 == 0:
+      result = result + str[i]
+  return result
